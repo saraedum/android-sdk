@@ -4,7 +4,7 @@ MAINTAINER Julian Rüth <julian.rueth@fsfe.org>
 
 # work around https://github.com/gradle/gradle/issues/3117
 RUN locale-gen "en_US.UTF-8"
-ADD pam-environment /root/.pam-environment
+RUN update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LANGUAGE=en_US.UTF-8
 
 # tools to build Android apps
 RUN echo y | sdkmanager "build-tools;27.0.1"
